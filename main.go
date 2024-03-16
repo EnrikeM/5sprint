@@ -140,7 +140,7 @@ func (w Walking) Calories() float64 {
 		return 0
 	}
 
-	return ((CaloriesWeightMultiplier*w.Weight + (w.meanSpeed()*KmHInMsec*w.meanSpeed()*KmHInMsec/w.Height)*
+	return ((CaloriesWeightMultiplier*w.Weight + (w.meanSpeed()*KmHInMsec*w.meanSpeed()*KmHInMsec/(w.Height*CmInM))*
 		CaloriesSpeedHeightMultiplier*w.Weight) * w.Training.Duration.Hours() * MinInHours)
 
 }
